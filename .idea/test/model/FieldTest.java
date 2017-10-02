@@ -30,7 +30,7 @@ public class FieldTest {
 
         final Field testField = new Field(testFigures, testSizeX, testSizeY);
 
-        assertEquals(testSizeY, testField.getSizeX());
+        assertEquals(testSizeY, testField.getSizeY());
     }
 
     @Test
@@ -43,7 +43,7 @@ public class FieldTest {
 
         final Field testField = new Field(testFigures, testSizeX, testSizeY);
 
-        assertEquals(testSizeX * testSizeY, testField.getSizeX());
+        assertEquals(testSizeX * testSizeY, testField.getSize());
     }
 
     @Test
