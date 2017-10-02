@@ -17,4 +17,11 @@ public class FieldHelperTest {
         assertEquals(expextedValue, realValue);
     }
 
+    @Test
+    public void getClassicMixedField() throws Exception {
+
+        final Field testField = FieldHelper.getClassicMixedField();
+
+        assertTrue(true);
+    }
 }
