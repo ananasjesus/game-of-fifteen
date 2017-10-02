@@ -18,6 +18,6 @@ public class NumericFigure implements IFigure<Integer>{
 
     @Override
     public Integer getValue() {
-        return null;
+        return value;
     }
 }
