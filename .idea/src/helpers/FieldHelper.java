@@ -2,8 +2,10 @@ package helpers;
 
 import model.*;
 
+import controller.*;
 
 import java.util.HashMap;
+import java.util.Random;
 
 public class FieldHelper {
     public static Field getClassicField() {
@@ -24,6 +26,18 @@ public class FieldHelper {
 
     }
 
+    public static Field getClassicMixedField() {
+        final Field field = getClassicField();
+        final Random random = new Random();
+        final int size = field.getSize();
+        int id1, id2;
+        for (int i = 0; i < size * 4; i++) {
+            id1 = random.nextInt(size) + 1;
+            id2 = random.nextInt(size) + 1;
+            MoveController.swap(field, id1, id2);
+        }
 
+        return field;
+    }
 
 }
