@@ -13,6 +13,17 @@ public class Game {
         this.field = field;
     }
 
+    public Field getField() {
+        return field;
+    }
+
+    public String getGameName() {
+        return gameName;
+    }
+
+    public String getPlayerName() {
+        return playerName;
+    }
 
 
 }
