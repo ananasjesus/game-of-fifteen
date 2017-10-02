@@ -13,14 +13,12 @@ public class FieldHelper {
         final int sizeY = 4;
         final int size = sizeX * sizeY;
 
-        NumericFigure currentFigure;
 
         for (int i = 1; i < size; i++) {
-            currentFigure = new NumericFigure(i, i);
-            figures.put(i, currentFigure);
+            figures.put(i, new NumericFigure(i, i));
         }
-        currentFigure = new NumericFigure(size, null);
-        figures.put(size, currentFigure);
+
+        figures.put(size, new NumericFigure(size, null));
 
         return new Field(figures, sizeX, sizeY);
 
