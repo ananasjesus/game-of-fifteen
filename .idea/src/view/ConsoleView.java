@@ -2,6 +2,8 @@ package view;
 
 import controller.*;
 
+import model.*;
+
 import java.io.IOException;
 
 public class ConsoleView {
@@ -18,6 +20,17 @@ public class ConsoleView {
             try {
                 runtime.exec("clear");
             } catch (IOException e) {}
+
+    }
+
+    public static void printHead(Game game) {
+        System.out.println(game.getGameName());
+        System.out.println(game.getPlayerName());
+
+
+    }
+
+    public static void printField(Game game) {
 
     }
 }
