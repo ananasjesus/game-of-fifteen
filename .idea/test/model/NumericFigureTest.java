@@ -27,7 +27,7 @@ public class NumericFigureTest {
 
         final NumericFigure testFigure = new NumericFigure(testId, testValue);
 
-        assertEquals(testValue, testFigure.getValue());
+        assertEquals(testValue, (int)testFigure.getValue());
     }
 
 }
