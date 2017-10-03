@@ -7,6 +7,7 @@ import static org.junit.Assert.*;
 import model.*;
 
 import helpers.*;
+import view.*;
 
 public class MoveControllerTest {
     @Test
@@ -24,6 +25,18 @@ public class MoveControllerTest {
 
         assertEquals(expectedId, resultId);
 
+    }
+
+    @Test
+    public void nullId() throws Exception {
+
+        Field field = FieldHelper.getClassicMixedField();
+
+        ConsoleView.printField(field);
+
+        System.out.print(MoveController.nullId(field));
+
+        assertTrue(true);
     }
 
 }
