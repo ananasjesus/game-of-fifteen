@@ -9,6 +9,10 @@ public class GameCLI {
     public static void main(String[] args) {
         Field field = FieldHelper.getClassicMixedField();
 
+/* Test
+        field = FieldHelper.getClassicField();
+        MoveController.swapNull(field, 15);
+*/
         System.out.print("Как Вас зовут? : ");
         String playerName = ConsoleView.getStringFromInput();
 
@@ -20,10 +24,15 @@ public class GameCLI {
 
             ConsoleView.printField(game);
 
+            int nextId = 0;
 
+            while (!MoveController.isLegalMove(field, nextId))
+                nextId = ConsoleView.getIdFromInput(game);
 
-
+            MoveController.swapNull(game, nextId);
         }
+
+        System.out.printf("\n Победа!");
     }
 
 
