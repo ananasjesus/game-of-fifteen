@@ -49,6 +49,23 @@ public class ConsoleView {
         System.out.println();
     }
 
+    public static void printField(Field field) {
+
+        for (int i = 1; i <= field.getSize(); i++) {
+
+            if (i % field.getSizeX() == 1)
+                System.out.print("\n|");
+
+
+            if (field.getFigure(i).getValue() != null)
+                System.out.printf("%3s|", field.getFigure(i).getValue());
+            else
+                System.out.print("   |");
+
+        }
+        System.out.println();
+    }
+
     public static int getIdFromInput(Game game) {
         int sizeX = game.getField().getSizeX();
         int sizeY = game.getField().getSizeY();
