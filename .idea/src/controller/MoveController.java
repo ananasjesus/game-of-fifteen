@@ -23,6 +23,14 @@ public class MoveController {
         field.setFigure(id2, tempFigure);
     }
 
+    public static void swapNull(Game game, int id) {
+        Field field = game.getField();
+        int nullId = nullId(field);
+        IFigure tempFigure = field.getFigure(id);
+        field.setFigure(id, field.getFigure(nullId));
+        field.setFigure(nullId, tempFigure);
+    }
+
     public static boolean isLegalMove(Field field, int id) {
         int sizeX = field.getSizeX();
         int sizeY = field.getSizeY();
@@ -41,5 +49,7 @@ public class MoveController {
                 return true;
         return false;
     }
+
+
 
 }
