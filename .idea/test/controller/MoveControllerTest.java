@@ -39,4 +39,19 @@ public class MoveControllerTest {
         assertTrue(true);
     }
 
+    @Test
+    public void isLegalMove() throws Exception {
+
+        Field field = FieldHelper.getClassicMixedField();
+
+        ConsoleView.printField(field);
+
+        for (int i = 1; i <= field.getSize(); i++) {
+            System.out.printf("\n%3d=%s", i, MoveController.isLegalMove(field, i));
+        }
+
+        assertTrue(true);
+    }
+
+
 }
