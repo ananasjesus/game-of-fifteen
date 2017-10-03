@@ -31,6 +31,13 @@ public class MoveController {
         field.setFigure(nullId, tempFigure);
     }
 
+    public static void swapNull(Field field, int id) {
+        int nullId = nullId(field);
+        IFigure tempFigure = field.getFigure(id);
+        field.setFigure(id, field.getFigure(nullId));
+        field.setFigure(nullId, tempFigure);
+    }
+
     public static boolean isLegalMove(Field field, int id) {
         int sizeX = field.getSizeX();
         int sizeY = field.getSizeY();
