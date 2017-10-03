@@ -92,6 +92,40 @@ public class ConsoleView {
 
     }
 
+    public static int getIdFromInputDirection(Game game) {
+        int sizeX = game.getField().getSizeX();
+        int size = game.getField().getSize();
+        Scanner sc = new Scanner(System.in);
+        boolean correctInput = false;
+        int nullId = MoveController.nullId(game.getField());
+        int id = 0;
+        String inputString;
+        while(!correctInput) {
+            try {
+                System.out.print("\n Введите направление (w-вверх a-влево s-вниз d-вправо): ");
+                inputString = sc.nextLine();
+
+                switch (inputString) {
+                    case "w": {id = nullId + sizeX; break;}
+                    case "a": {id = nullId + 1; break;}
+                    case "s": {id = nullId - sizeX; break;}
+                    case "d": {id = nullId - 1; break;}
+                }
+
+                if (id > 0 && id <= size)
+                    correctInput = true;
+                else
+                    throw new InputMismatchException();
+            }
+            catch (InputMismatchException e) {
+                System.out.println("Некорректное значение");
+            }
+        }
+        return id;
+
+    }
+
+
     public static String getStringFromInput() {
         Scanner sc = new Scanner(System.in);
         return sc.nextLine();
