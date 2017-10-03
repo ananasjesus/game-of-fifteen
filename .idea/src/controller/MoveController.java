@@ -23,9 +23,23 @@ public class MoveController {
         field.setFigure(id2, tempFigure);
     }
 
-   /* public static boolean isLegalMove(Field field, int id) {
+    public static boolean isLegalMove(Field field, int id) {
         int sizeX = field.getSizeX();
         int sizeY = field.getSizeY();
+        int nullId = nullId(field);
+
+        int currentX = id % sizeX;
+        int currentY = (id - currentX) / sizeX + 1;
+        int nullX = nullId % sizeX;
+        int nullY = (nullId - nullX) / sizeX + 1;
+
+        if (nullY == currentY)
+            if (Math.abs(nullX - currentX) == 1)
+                return true;
+        if (nullX == currentX)
+            if (Math.abs(nullY - currentY) == 1)
+                return true;
+        return false;
     }
-    */
+
 }
