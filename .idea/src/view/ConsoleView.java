@@ -74,4 +74,10 @@ public class ConsoleView {
         return (y-1) * sizeX + x;
 
     }
+
+    public static String getStringFromInput() {
+        Scanner sc = new Scanner(System.in);
+        return sc.nextLine();
+    }
+
 }
