@@ -5,6 +5,8 @@ import controller.*;
 import model.*;
 
 import java.io.IOException;
+import java.util.Scanner;
+import java.util.InputMismatchException;
 
 public class ConsoleView {
 
@@ -45,5 +47,31 @@ public class ConsoleView {
 
         }
         System.out.println();
+    }
+
+    public static int getIdFromInput(Game game) {
+        int sizeX = game.getField().getSizeX();
+        int sizeY = game.getField().getSizeY();
+        Scanner sc = new Scanner(System.in);
+        boolean correctInput = false;
+        int x = 0, y = 0;
+        while(!correctInput) {
+            try {
+                System.out.print("\n Введите x=");
+                x = sc.nextInt();
+                System.out.print("\n Введите y=");
+                y = sc.nextInt();
+                if (x > 0 && x <= sizeX && y > 0 && y <= sizeY)
+                    correctInput = true;
+                else
+                    throw new InputMismatchException();
+            }
+            catch (InputMismatchException e) {
+                System.out.println("Некорректное значение");
+                sc.nextLine();
+            }
+        }
+        return (y-1) * sizeX + x;
+
     }
 }
