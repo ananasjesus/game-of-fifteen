@@ -27,7 +27,12 @@ public class GameCLI {
             int nextId = 0;
 
             while (!MoveController.isLegalMove(field, nextId))
-                nextId = ConsoleView.getIdFromInput(game);
+
+//Input X and Y
+//                nextId = ConsoleView.getIdFromInput(game);
+
+//Input Direction
+                nextId = ConsoleView.getIdFromInputDirection(game);
 
             MoveController.swapNull(game, nextId);
         }
