@@ -43,10 +43,13 @@ public class MoveController {
         int sizeY = field.getSizeY();
         int nullId = nullId(field);
 
-        int currentX = id % sizeX;
+        int currentX = id % sizeX == 0 ? sizeX : id % sizeX;
         int currentY = (id - currentX) / sizeX + 1;
-        int nullX = nullId % sizeX;
+        int nullX = nullId % sizeX == 0 ? sizeX : nullId % sizeX;
         int nullY = (nullId - nullX) / sizeX + 1;
+
+        System.out.printf("\nsX=%d\nsY=%d\nnId=%d\ncX=%d\ncY=%d\nnX=%d\nnY=%d", sizeX, sizeY, nullId, currentX, currentY, nullX, nullY);
+
 
         if (nullY == currentY)
             if (Math.abs(nullX - currentX) == 1)
