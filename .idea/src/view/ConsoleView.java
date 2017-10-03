@@ -26,11 +26,21 @@ public class ConsoleView {
     public static void printHead(Game game) {
         System.out.println(game.getGameName());
         System.out.println(game.getPlayerName());
-
-
+        System.out.println();
     }
 
     public static void printField(Game game) {
 
+        final Field field = game.getField();
+
+        for (int i = 1; i <= field.getSize(); i++) {
+
+            if (i % field.getSizeX() == 1)
+                System.out.print("/n|");
+
+            System.out.printf("%3d|", field.getFigure(i).getValue());
+
+        }
+        System.out.println();
     }
 }
