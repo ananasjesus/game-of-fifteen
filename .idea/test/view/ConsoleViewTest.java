@@ -29,5 +29,17 @@ public class ConsoleViewTest {
 
     }
 
+  /*  @Test
+    public void getId() throws Exception {
+
+        Game game = new Game("имя игры", "имя игрока", FieldHelper.getClassicMixedField());
+
+        int id = ConsoleView.getIdFromInput(game);
+
+        System.out.print(id);
+
+        assertTrue(true);
+    }
+    */
 
 }
