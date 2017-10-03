@@ -48,9 +48,6 @@ public class MoveController {
         int nullX = nullId % sizeX == 0 ? sizeX : nullId % sizeX;
         int nullY = (nullId - nullX) / sizeX + 1;
 
-        System.out.printf("\nsX=%d\nsY=%d\nnId=%d\ncX=%d\ncY=%d\nnX=%d\nnY=%d", sizeX, sizeY, nullId, currentX, currentY, nullX, nullY);
-
-
         if (nullY == currentY)
             if (Math.abs(nullX - currentX) == 1)
                 return true;
